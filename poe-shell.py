@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-from json import loads
+from json import dumps, loads
 from poe import Client
 from sys import argv
 from collections.abc import Iterable
@@ -32,7 +32,10 @@ if callable(func):
     func_return = func(*parameter_list, **parameter_dict)
     if isinstance(func_return, Iterable):
         for content in func(*parameter_list, **parameter_dict):
-            print(content)
+            try:
+                print(dumps(content))
+            except:
+                print(content)
         print()
     else:
         print(func_return)
