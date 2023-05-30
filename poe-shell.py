@@ -27,7 +27,7 @@ except:
 
 for arg in argv:
     try:
-        parameter_list.append(int(arg))
+        parameter_list.append(float(arg))
     except:
         parameter_list.append(arg)
 
