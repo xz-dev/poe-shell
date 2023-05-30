@@ -19,7 +19,7 @@ Before using, you need to get an API token from poe.com and save it to the POE_T
 Then you can call any function defined in poe-api by passing in the function name and arguments. For example:
 
 ```bash
-POE_TOKEN=xxxxxxx ./poe-shell.py bot_names 
+POE_TOKEN=xxxxxxx ./poe-shell.py bot_names | jq . 
 POE_TOKEN=xxxxxxx ./poe-shell.py send_message capybara "hello 你好" | jq -r '.text_new' | tr -d '\n' 
 ```   
 
