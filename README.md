@@ -21,17 +21,7 @@ Then you can call any function defined in poe-api by passing in the function nam
 ```bash
 POE_TOKEN=xxxxxxx ./poe-shell.py bot_names 
 POE_TOKEN=xxxxxxx ./poe-shell.py send_message capybara 'hello' 
-```
-
-## Supported Features   
-
-poe-shell.py supports all functions defined in poe-api, including:  
-
-- Get league information  
-- Get character information  
-- Get item information  
-- Get skill tree information  
-- And more...   
+```   
 
 For specific functions and arguments, please refer to [ading2210/poe-api](https://github.com/ading2210/poe-api).
 
@@ -39,3 +29,12 @@ For specific functions and arguments, please refer to [ading2210/poe-api](https:
 
 If you encounter any issues or have feature requests, feel free to file an issue or pull request. 
 
+## End
+
+All code from poe's gpt4 self, I just review all code and check it running.  
+Thanks all dev for AI and about AI :)  
+
+# More Toy
+
+[poe_sidebar_robots_remover](https://github.com/xz-dev/poe_sidebar_robots_remover): Remove Poe.com useless Robots from Sidebar  
+More intresting project check in my [homepage😄](https://github.com/xz-dev)  
