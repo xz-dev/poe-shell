@@ -22,6 +22,12 @@ Then you can call any function defined in poe-api by passing in the function nam
 POE_TOKEN=xxxxxxx ./poe-shell.py bot_names | jq . 
 POE_TOKEN=xxxxxxx ./poe-shell.py send_message capybara "hello 你好" | jq -r '.text_new' | tr -d '\n' 
 ```   
+You **also can** use it to do some hard thing by poe-api or by website
+
+```bash
+# Clean all bot message
+for bot in $(./poe-shell.py bot_names | jq -r 'keys[]'); do echo $bot; ./poe-shell.py purge_conversation "$bot"; done
+```
 
 For specific functions and arguments, please refer to [ading2210/poe-api](https://github.com/ading2210/poe-api).
 
