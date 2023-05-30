@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
-import os
+from os import environ
 from json import dumps, loads
 from poe import Client
 from sys import argv
 from collections.abc import Iterable
+from inspect import signature
 
 
-TOKEN = os.environ["POE_TOKEN"]
+TOKEN = environ["POE_TOKEN"]
 
 client = Client(TOKEN)
 
@@ -31,14 +32,29 @@ for arg in argv:
         parameter_list.append(arg)
 
 
+ui_mode = r"{input}" in parameter_list
+
+if ui_mode:
+    print("UI mode enabled")
+
+
 def print_output(content):
     try:
-        print(dumps(content))
+        if not ui_mode:
+            print(dumps(content))
+        else:
+            print(content)
     except:
         print(content)
 
 
 if callable(func):
+    func_parameter_list = list(signature(func).parameters)
+    if ui_mode:
+        print(f"function parameters: {func_parameter_list}")
+    for i, parameter in enumerate(parameter_list):
+        if parameter == r"{input}":
+            parameter_list[i] = input(f"{func_parameter_list[i]}: ")
     func_return = func(*parameter_list, **parameter_dict)
     if isinstance(func_return, Iterable):
         for content in func(*parameter_list, **parameter_dict):
