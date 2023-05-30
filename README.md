@@ -20,7 +20,7 @@ Then you can call any function defined in poe-api by passing in the function nam
 
 ```bash
 POE_TOKEN=xxxxxxx ./poe-shell.py bot_names 
-POE_TOKEN=xxxxxxx ./poe-shell.py send_message capybara 'hello' 
+POE_TOKEN=xxxxxxx ./poe-shell.py send_message capybara "hello 你好" | jq -r '.text_new' | tr -d '\n' 
 ```   
 
 For specific functions and arguments, please refer to [ading2210/poe-api](https://github.com/ading2210/poe-api).
