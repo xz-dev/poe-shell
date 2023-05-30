@@ -16,11 +16,13 @@ func = getattr(client, argv.pop(0))
 parameter_list = []
 parameter_dict = {}
 
-argv_first = argv.pop(0)
+argv_first = None
 try:
+    argv_first = argv.pop(0)
     parameter_dict = loads(argv_first)
 except:
-    argv.insert(0, argv_first)
+    if argv_first is not None:
+        argv.insert(0, argv_first)
 
 for arg in argv:
     try:
@@ -28,16 +30,21 @@ for arg in argv:
     except:
         parameter_list.append(arg)
 
+
+def print_output(content):
+    try:
+        print(dumps(content))
+    except:
+        print(content)
+
+
 if callable(func):
     func_return = func(*parameter_list, **parameter_dict)
     if isinstance(func_return, Iterable):
         for content in func(*parameter_list, **parameter_dict):
-            try:
-                print(dumps(content))
-            except:
-                print(content)
+            print_output(content)
         print()
     else:
-        print(func_return)
+        print_output(func_return)
 else:
-    print(func)
+    print_output(func)
