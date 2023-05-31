@@ -37,6 +37,17 @@ ui_mode = r"{input}" in parameter_list
 if ui_mode:
     print("UI mode enabled")
 
+def get_input(prompt):
+    input_str_all = ""
+    while True:
+        try:
+            input_str = input(prompt)
+        except EOFError:  # Ctrl+D
+            break
+        if not input_str:  # empty
+            break
+        input_str_all += input_str
+    return input_str_all
 
 def print_output(content):
     try:
@@ -54,7 +65,7 @@ if callable(func):
         print(f"function parameters: {func_parameter_list}")
     for i, parameter in enumerate(parameter_list):
         if parameter == r"{input}":
-            parameter_list[i] = input(f"{func_parameter_list[i]}: ")
+            parameter_list[i] = get_input(f"{func_parameter_list[i]}: ")
     func_return = func(*parameter_list, **parameter_dict)
     if isinstance(func_return, Iterable):
         for content in func(*parameter_list, **parameter_dict):
