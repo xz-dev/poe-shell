@@ -48,6 +48,15 @@ message: 你好呀
 {'id': 'TWVzc2FnZTo5OTA2MDg0MzI=', 'messageId': 990608432, 'creationTime': 1685469024963210, 'state': 'incomplete', 'text': 'Hello! How can I assist you today?', 'author': 'capybara', 'linkifiedText': 'Hello! How can I assist you today?', 'suggestedReplies': [], 'vote': None, 'voteReason': None, 'text_new': '?'}
 ```
 
+### Bash command helpper
+
+``` bash
+$ ./helpper/poe-botname.sh Sage
+capybara
+# Clean Sage message
+$ ./poe-shell.py purge_conversation $(./helper/poe-botname.sh Sage)
+```
+
 ## Feedback   
 
 If you encounter any issues or have feature requests, feel free to file an issue or pull request. 
