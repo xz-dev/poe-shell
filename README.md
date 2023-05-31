@@ -1,6 +1,7 @@
 # poe-shell.py 
 
-This is a shell tool for accessing poe.com. It wraps almost all webpage functions on poe.com through [ading2210/poe-api](https://github.com/ading2210/poe-api).
+This is a shell tool for accessing poe.com. (NO Waiting Error!)  
+It wraps almost all webpage functions on poe.com through [ading2210/poe-api](https://github.com/ading2210/poe-api).  
 
 ## Installation
 
