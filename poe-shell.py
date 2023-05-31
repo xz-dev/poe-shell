@@ -44,8 +44,6 @@ def get_input(prompt):
             input_str = input(prompt)
         except EOFError:  # Ctrl+D
             break
-        if not input_str:  # empty
-            break
         input_str_all += input_str
     return input_str_all
 

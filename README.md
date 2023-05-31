@@ -39,7 +39,7 @@ for bot in $(./poe-shell.py bot_names | jq -r 'keys[]'); do echo $bot; ./poe-she
 ### UI mode
 
 ```bash
-🚀./poe-shell.py send_message capybara {input} # support multi line input, Ctrl-D Or empty to break input
+🚀./poe-shell.py send_message capybara {input} # support multi line input, Ctrl-D to break input
 (.venv) UI mode enabled
 function parameters: ['chatbot', 'message', 'with_chat_break', 'timeout']
 message: Hello
