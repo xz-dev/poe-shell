@@ -45,6 +45,7 @@ def get_input(prompt):
         except EOFError:  # Ctrl+D
             break
         input_str_all += input_str
+    print()
     return input_str_all
 
 def print_output(content):
