@@ -55,6 +55,10 @@ $ ./helpper/poe-botname.sh Sage
 capybara
 # Clean Sage message
 $ ./poe-shell.py purge_conversation $(./helper/poe-botname.sh Sage)
+...
+$ ./helper/poe-online-search.sh Claude+ 请问清酒都可以用来干什么，可以直接喝吗？
+...
+
 ```
 
 ## Feedback   
